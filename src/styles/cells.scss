@@ -1,0 +1,46 @@
+.cells {
+  .cell {
+    padding: 0 20px 20px;
+    min-width: 625px;
+    .cell-card {
+      border-radius: 10px;
+      background-color: #fcfcfc;
+      .body {
+        display: flex;
+        .txt {
+          width: 100%;
+          .row {
+            margin-top: 10px;
+            font-size: 15px;
+            line-height: 26px;
+            color: #475669;
+            .row-name {
+              display: inline-block;
+              min-width: 100px;
+              margin-left: 20px;
+            }
+            .row-data {
+              font-weight: 500;
+            }
+            .edit {
+              width: 75%;
+              margin-bottom: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  .el-button {
+    width: 500px;
+    margin-bottom: 20px;
+    margin-left: 0 !important;
+  }
+}

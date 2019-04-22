@@ -1,0 +1,39 @@
+.dialog {
+  min-width: 450px;
+  padding: 20px 20px 30px;
+  border-radius: 10px;
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .item-title {
+      width: 370px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 370px;
+      min-height: 45px;
+      line-height: 45px;
+      margin-bottom: 10px;
+
+      .title {
+        font-size: 14px;
+        width: 120px;
+        text-align: center;
+      }
+
+      .content {
+        text-align: left;
+        width: 250px;
+      }
+    }
+  }
+}
