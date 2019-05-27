@@ -1,10 +1,18 @@
+/*
+  title：页面标题，同时页面的图标也是根据title来命名，以及做匹配的，图标放在@/icons/svg目录下面。不要改变svg存放的路径，会出错的。
+  hidden：是否对侧边栏隐藏该菜单
+  keepAlive：是否缓存该页面
+  isBack：用于从特定的一组页面进入该页面时，页面是否要根据上一个页面来做不同的初始化逻辑，和keepAlive一起用
+*/
 import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
 /* Layout */
 import Layout from '../views/layout/Layout'
-export const constantRouterMap = [
+/* 所有权限通用路由表
+   如首页和登录页和一些不用权限的公用页面 */
+export const constantRoutes = [
   {
     path: '/login',
     component: resolve => void require(['@/views/login'], resolve),
@@ -40,8 +48,24 @@ export const constantRouterMap = [
   { path: '*', redirect: '/404', hidden: true }
 ]
 
-export default new Router({
-  // mode: 'history', //后端支持可开
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRouterMap
+/**
+ * 异步挂载的路由
+ * 动态需要根据权限加载的路由表
+ */
+export const asyncRoutes = [
+]
+
+const createRouter = () => new Router({
+  // mode: 'history', // require service support
+  scrollBehavior: () => ({
+    y: 0
+  }),
+  routes: constantRoutes
 })
+const router = createRouter()
+
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
+export default router

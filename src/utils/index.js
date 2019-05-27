@@ -1,7 +1,32 @@
+/* eslint-disable */
+
 /**
- * Created by jiachenpan on 16/11/18.
+ * 基础工具类
  */
 
+// 将数组转换成字符串类型
+export function arrayToString(arr) {
+  // 判断是否是数组类型
+  if (Object.prototype.toString.call(arr) !== '[object Array]') {
+    return
+  }
+  const length = arr.length
+  if (length === 0) { // 如果是空数组
+    return ''
+  } else {
+    let result = ''
+    arr.forEach((item, index) => { // 遍历数组，用逗号连接数组元素
+      if (index === 0) {
+        result = `${item}`
+      } else {
+        result = `${result},${item}`
+      }
+    })
+    return result
+  }
+}
+
+// 格式化时间
 export function parseTime(time, cFormat) {
   if (arguments.length === 0) {
     return null
@@ -35,6 +60,7 @@ export function parseTime(time, cFormat) {
   return time_str
 }
 
+// 格式化时间
 export function formatTime(time, option) {
   time = +time * 1000
   const d = new Date(time)

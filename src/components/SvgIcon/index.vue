@@ -1,3 +1,6 @@
+/* 自定义svg组件
+  该组件需要将svg文件保存在@/icons/svg目录下，才能使用
+ */
 <template>
   <svg :class="svgClass" aria-hidden="true">
     <use :xlink:href="iconName"/>

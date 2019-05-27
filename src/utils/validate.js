@@ -1,16 +1,31 @@
+/* eslint-disable */
+
 /**
- * Created by jiachenpan on 16/11/18.
+ * 表单验证工具类
  */
 
-export function isvalidUsername(str) {
-  const valid_map = ['admin', 'editor', '1234@qq.com']
-  return valid_map.indexOf(str.trim()) >= 0
+export function isvalidPositiveFloat(str) {
+  // 正浮点数，不包括0
+  const strRegex = /^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/
+  return strRegex.test(str)
+}
+
+export function isvalidPositiveNumber(str) {
+  // 正整数，不包括0
+  const strRegex = /^[0-9]*[1-9][0-9]*$/
+  return strRegex.test(str)
 }
 
 /* 合法手机号码 */
 export function isvalidPhoneNumber(str) {
   const phoneRegex = /^1[34578]\d{9}$/
   return phoneRegex.test(str)
+}
+
+/* 四位数字*/
+export function isvalidCode(str) {
+  const codeRegex = /^\d{4}$/
+  return codeRegex.test(str)
 }
 
 /* 合法uri*/
