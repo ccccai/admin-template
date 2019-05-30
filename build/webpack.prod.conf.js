@@ -135,6 +135,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         uglifyOptions: {
           mangle: {
             safari10: true
+          }, 
+          // webpack打包时去掉console.log
+          compress: {
+            warnings: false, // 在UglifyJs删除没有用到的代码时不输出警告
+            drop_debugger: true, // 删除所有的 `debugger` 语句
+            drop_console: true // 删除所有的 `console` 语句
           }
         },
         sourceMap: config.build.productionSourceMap,

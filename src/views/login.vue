@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { isvalidPhoneNumber } from '@/utils/validate'
+import { isvalidPhoneNumber } from '@/assets/utils/validate'
 
 export default {
   name: 'Login',

@@ -1,4 +1,4 @@
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { getToken, setToken, removeToken } from '@/assets/utils/auth'
 import API from '@/api/apiUrl'
 import Request from '@/assets/http'
 
